@@ -1,3 +1,5 @@
+# -*- coding: UTF-8 -*-
+
 """
 Django settings for HelloWorld project.
 
@@ -35,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'TestModel',  # 添加 model
 ]
 
 MIDDLEWARE = [
@@ -72,8 +75,12 @@ WSGI_APPLICATION = 'HelloWorld.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'runoob',
+        'HOST': '127.0.0.1',
+        'PORT': 3306,  # 端口
+        'USER': 'root',  # 数据库用户名
+        'PASSWORD': '123456',  # 数据库密码
     }
 }
 

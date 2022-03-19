@@ -13,7 +13,7 @@ def runoob(request):
 
 
 def script(request):
-    context = {'str': '<script>alert(\'Hello\')</script>>'}
+    context = {'scriptStr': '<script>alert(\'Hello\')</script>>'}
     return render(request, 'script.html', context)
 
 
@@ -23,10 +23,11 @@ def iftest(request):
 
 
 def fortest(request):
-    list = {'a','b','c'}
-    return render(request, 'for.html', {"list":list})
+    lst = {'a', 'b', 'c'}
+    return render(request, 'for.html', {"list": lst})
 
 
-@register.filter
-def get_range():
-    return range(10)
+def href(request):
+    request.encoding = 'utf-8'
+    dct = {'hrefStr': "<a href='https://www.runoob.com/'>点击跳转</a>"}
+    return render(request, 'href.html', dct)
