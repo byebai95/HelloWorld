@@ -1,23 +1,23 @@
 from django.conf.urls import url
 from django.contrib import admin
-from django.urls import include, path
+from django.urls import re_path
 
 from . import views, search
 
 urlpatterns = [
 
-    # url(r'^admin/$', admin.site.urls),
+   url(r'^admin/', admin.site.urls),
 
-    url(r'^hello/$', views.hello),
-    url(r'^runoob/$', views.runoob),
-    url(r'^script/$', views.script),
-    url(r'^iftest/$', views.iftest),
-    url(r'^fortest/$', views.fortest),
-    url(r'^href/$', views.href),
-
-    url(r'^search-form/$', search.search_form),
-    url(r'^search/$', search.search),
-
-    path('model/', include('TestModel.urls')),
+    # re_path(r'^hello/$', views.hello),
+    # re_path(r'^runoob/$', views.runoob),
+    # re_path(r'^script/$', views.script),
+    # re_path(r'^iftest/$', views.iftest),
+    # re_path(r'^fortest/$', views.fortest),
+    # re_path(r'^href/$', views.href),
+    #
+    # re_path(r'^search-form/$', search.search_form),
+    # re_path(r'^search/$', search.search),
+    #
+    # path('model/', include('TestModel.urls')),
 
 ]
